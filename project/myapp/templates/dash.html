@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="row justify-content-left">
+            <h1>Dashboard</h1>
+        <a class="btn btn-success float-right"  href="{%  url 'login' %}">Login</a>
+        <a class=" btn btn-warning float-left" href="{%  url 'register' %}">Register</a>
+        <a class=" btn btn-primary float-right" href= admin/ >Admin</a>
+        <a class=" btn btn-danger float-right"  href= admin/myapp/user/ >User log</a>
+        </p>
+    </div>
+    <div class="table-responsive-sm">
+        {% if company_object %}
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center">Company name</th>
+                         <th class="text-center">Show Details</th>
+                    </tr>
+                </thead>
+                 {% for x in company_object %}
+        <tr>
+            <tbody style="background:url(https://previews.123rf.com/images/shvetsovadesign/shvetsovadesign1909/shvetsovadesign190900042/130499160-abstract-bokeh-lights-with-soft-light-background-illustration.jpg)">
+            <td>{{ x.name }}</td>
+            <td class="text-center"><a class="btn btn-primary" href="{% url 'userlist' x.id %}">Agent List</a></td>
+{% endfor %}
+                </tbody>
+                </table>
+        </div>
+        {% else %}
+            <p class="text-center" >There is no collection available.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

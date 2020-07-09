@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="row justify-content-center">
+            <h1>Add details</h1>
+        </p>
+    </div>
+        <div class="table-responsive-sm">
+   <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="table table-bordered" style="background:url(https://previews.123rf.com/images/shvetsovadesign/shvetsovadesign1909/shvetsovadesign190900042/130499160-abstract-bokeh-lights-with-soft-light-background-illustration.jpg)">
+    {{ form.as_table }}
+    {{ formset.as_table }}
+    </table>
+    <input type="submit" value="Save"/>
+</form>
+        </div>
+{% endblock content %}

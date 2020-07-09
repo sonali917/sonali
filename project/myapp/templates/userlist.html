@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-8">
+        <p>
+            <div class="float-left"><h3>List of Agent</h3></div>
+        </p>
+        <div class="table-responsive-sm">
+        {% if user_list %}
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center">Agent name</th>
+                        <th class="text-center">Calls</th>
+                         <th class="text-center">Total time</th>
+                    </tr>
+                </thead>
+                 {% for y in user_list %}
+        <tr>
+            <tbody style="background:url(https://previews.123rf.com/images/shvetsovadesign/shvetsovadesign1909/shvetsovadesign190900042/130499160-abstract-bokeh-lights-with-soft-light-background-illustration.jpg)">
+            <td>{{ y.username }}</td>
+            <td>{{ 10 }}</td>
+            <td>{{ 5 }}</td>
+            {% endfor %}
+                </tbody>
+                </table>
+        </div>
+        {% else %}
+            <p class="text-center" >There is no agent available.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
